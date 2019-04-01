@@ -147,7 +147,7 @@ class Blockchain(object):
 
     def resolve_conflicts(self):
         """
-        これがコンセンサスアルゴリズムだ。ネットワーク上の最も長いチェーンで自らのチェーンを
+        コンセンサスアルゴリズム。ネットワーク上の最も長いチェーンで自らのチェーンを
         置き換えることでコンフリクトを解消する。
         :return: <bool> 自らのチェーンが置き換えられると True 、そうでなれけば False
         """
@@ -171,7 +171,7 @@ class Blockchain(object):
                     max_length = length
                     new_chain = chain
 
-        # もし自らのチェーンより長く、かつ有効なチェーンを見つけた場合それで置き換える
+        # 自らのチェーンより長く、かつ有効なチェーンを見つけた場合は置き換える
         if new_chain:
             self.chain = new_chain
             return True
